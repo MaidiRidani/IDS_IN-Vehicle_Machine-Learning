@@ -1,0 +1,13 @@
+===== EXPERIMENT NOTE =====
+
+--- CONFIG ---
+Mode   : NON-IID
+Rounds : 25
+
+--- MODEL INFO ---
+Total Params          : 1046172
+Trainable Params      : 1039004
+Non-trainable Params  : 7168
+Model Size (bytes)    : 4358296
+Model Size (KB)       : 4256.15
+Model Size (MB)       : 4.16

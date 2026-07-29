@@ -1,0 +1,33 @@
+===== EXPERIMENT NOTE =====
+
+--- CONFIG ---
+Mode   : NON-IID
+Rounds : 20
+
+--- MODEL INFO ---
+Total Params          : 217532
+Trainable Params      : 217212
+Non-trainable Params  : 320
+Model Size (bytes)    : 960120
+Model Size (KB)       : 937.62
+Model Size (MB)       : 0.92
+
+--- FINAL RESULTS ---
+
+[FINAL MODEL]
+loss: 0.17281727492809296
+accuracy: 0.9579560160636902
+precision: 0.9558233022689819
+recall: 0.9571045637130737
+fpr: 0.04125
+fnr: 0.04289544235924933
+f1: 0.9564635039024779
+
+[BEST MODEL]
+loss: 0.17281727492809296
+accuracy: 0.9579560160636902
+precision: 0.9558233022689819
+recall: 0.9571045637130737
+fpr: 0.04125
+fnr: 0.04289544235924933
+f1: 0.9564635039024779
