@@ -6,11 +6,49 @@ This repository contains the implementation, experiments, and supporting tools d
 
 ---
 
-## About the Project
+## Overview
 
-Modern vehicles are no longer composed of isolated Electronic Control Units (ECUs). They rely on high-speed communication networks to exchange data between sensors, controllers, and safety-critical applications. As vehicle connectivity continues to increase, protecting these internal communication networks from cyber attacks becomes increasingly important.
+Modern vehicles rely on high-speed in-vehicle communication networks to exchange data among Electronic Control Units (ECUs), sensors, and safety-critical applications. As these networks become increasingly connected and complex, they also become more vulnerable to cyber attacks.
 
-This research investigates the use of machine learning and deep learning techniques to detect malicious network traffic within modern in-vehicle networks. The proposed approach is evaluated using the **TOW-IDS** dataset and extended with **Federated Learning** to study collaborative model training while preserving data locality.
+This research investigates a deep learning-based Intrusion Detection System (IDS) for modern Automotive Ethernet networks. The proposed approach combines packet preprocessing, multi-wavelet feature extraction, and a lightweight neural network architecture to improve attack detection while maintaining computational efficiency.
+
+---
+
+## Proposed Preprocessing Pipeline
+
+The following figure illustrates the complete preprocessing pipeline used to transform raw packet traffic into image representations suitable for deep learning models.
+
+<p align="center">
+    <img src="preprocessing%20pipeline.jpg" width="100%">
+</p>
+
+The preprocessing pipeline consists of:
+
+- Raw packet collection from Automotive Ethernet traffic.
+- Packet parsing and byte extraction.
+- Packet standardization using padding or truncation.
+- Construction of packet-byte matrices.
+- Sliding window generation.
+- Normalization.
+- Multi-wavelet decomposition.
+- RGB image generation for model input.
+
+---
+
+## Proposed Model: DPDNet-Lite
+
+The primary contribution of this research is **DPDNet-Lite**, a lightweight deep learning architecture specifically designed for intrusion detection in modern in-vehicle networks.
+
+<p align="center">
+    <img src="structure%20DPDNet-Lite.jpg" width="100%">
+</p>
+
+DPDNet-Lite is designed to:
+
+- Learn spatial packet representations extracted from multi-wavelet images.
+- Reduce computational complexity using factorized convolutions.
+- Capture directional packet features through Dual-Path Directional Blocks.
+- Provide lightweight inference while maintaining competitive detection performance.
 
 ---
 
@@ -18,57 +56,50 @@ This research investigates the use of machine learning and deep learning techniq
 
 This repository includes:
 
-- Reference implementations of existing IDS models from previous studies.
-- The proposed **DPDNet_Lite** architecture.
+- **DPDNet_Lite**, the proposed IDS architecture.
+- Reference implementations of existing IDS models for comparison:
+  - MRTCN
+  - Swin Transformer
 - Experiments using the TOW-IDS dataset.
-- Wavelet-based preprocessing experiments.
+- Wavelet preprocessing studies.
 - Federated Learning experiments.
 - A web-based dashboard for preprocessing and inference.
 
 ---
 
-## Project Structure
+## Repository Structure
 
-```
+```text
 .
 ├── tow_ids/                     # Proposed DPDNet_Lite model and TOW-IDS experiments
 ├── mrtcn_ids/                   # MRTCN reference implementation
 ├── swin_ids/                    # Swin Transformer reference implementation
 ├── WaveletPerbandingan/         # Wavelet preprocessing experiments
 ├── FLwaveletperbandingan/       # Federated Learning experiments
-├── ReplikasiNewModel(gambar)/   # DPDNet_Lite architecture design
+├── ReplikasiNewModel(gambar)/   # DPDNet-Lite architecture design
 ├── vehicleidsdashboard/         # Dashboard (React + FastAPI)
 ├── README.md
-├── dashboard.jpeg
-└── event.jpeg
 ```
-
----
-
-## Proposed Model
-
-The main contribution of this research is **DPDNet_Lite**, a lightweight deep learning architecture designed for intrusion detection in modern in-vehicle networks.
-
-Reference models (MRTCN and Swin Transformer) are included for benchmarking and comparative evaluation.
 
 ---
 
 ## Dataset
 
-Primary dataset:
+The primary dataset used in this research is:
 
-- TOW-IDS
+- **TOW-IDS**
+
+The dataset represents modern Automotive Ethernet communication and includes both normal traffic and multiple attack scenarios for intrusion detection research.
 
 ---
 
 ## Contact
 
-For questions, discussions, collaboration, or additional information about this research, please feel free to contact me.
+If you have any questions, suggestions, or would like to discuss this research, please feel free to contact me.
 
-**Author:** Maidi Ridani
+**Maidi Ridani**
 
-GitHub: https://github.com/MaidiRidani
+- GitHub: https://github.com/MaidiRidani
+- Email: dani.maidiridani@gmail.com
 
-Email: *your email here*
-
-LinkedIn: *optional*
+> **Note:** If you contact me via email regarding this repository, please use **"GitHub Q&A"** as the email subject to help me identify and prioritize your message.
